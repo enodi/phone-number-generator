@@ -39,7 +39,7 @@ export const generatePhoneNumbers = (req, res) => {
   writeNumbersToFile(pathToFile, numbersToFile, res);
 
   return res.status(201).json({
-    status: "sucess",
+    status: "success",
     message: "Phone numbers generated successfully",
     data: numbersToFile
   });

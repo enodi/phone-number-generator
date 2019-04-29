@@ -9,7 +9,8 @@
     "dev": "webpack --env.mode development",
     "start": "nodemon --exec babel-node server/app.js",
     "lint": "eslint ./",
-    "test": "mocha"
+    "test": "NODE_ENV=test mocha --require @babel/register server/tests/**/*.spec.js --exit",
+    "coveralls": "nyc --reporter=html --reporter=text npm test"
   },
   "husky": {
     "hooks": {
@@ -50,13 +51,18 @@
     "webpack-merge": "^4.2.1"
   },
   "devDependencies": {
+    "@babel/register": "^7.4.4",
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.5",
     "babel-polyfill": "^6.26.0",
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
     "eslint": "^5.16.0",
     "eslint-plugin-react": "^7.12.4",
     "husky": "^2.1.0",
+    "mocha": "^6.1.4",
     "nodemon": "^1.18.11",
+    "nyc": "^14.0.0",
     "webpack-dev-server": "^3.3.1"
   }
 }

@@ -1,3 +1,5 @@
 node_modules/
 .env
 numbers.txt
+.nyc_output
+coverage/
