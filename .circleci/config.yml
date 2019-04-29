@@ -25,7 +25,7 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       # generate test coverage
-      - run: npm test -- --coverage
+      - run: npm run coverage
 
       # send coverage report to coveralls
       - run: COVERALLS_REPO_TOKEN=$repo_token npm run coveralls
