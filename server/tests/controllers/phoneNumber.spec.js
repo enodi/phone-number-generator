@@ -108,6 +108,7 @@ describe("Phone Numbers", () => {
           expect(res.body.message)
             .to.equal("Phone numbers retrieved successfully");
           expect(res.body.data).to.be.an("object");
+          expect(res.body.status).to.equal("success");
           expect(res.status).to.equal(200);
           expect(res.body.data).to.have.property("totalPhoneNumbersGenerated");
           done();
