@@ -8,7 +8,7 @@ import SubHeader from "../../components/SubHeader";
 import generatePhoneNumbers from "../../../helpers/config";
 import "./style.scss";
 
-const GenerateRandomNumber = (props) => {
+const GenerateRandomNumber = () => {
   const [specifiedNumber, setSpecifiedNumber] = useState();
   const [order, setOrder] = useState(false);
 
