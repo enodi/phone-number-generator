@@ -58,10 +58,9 @@ export const getPhoneNumbers = (req, res) => {
     const content = JSON.parse(data);
     const sortedNumbers = content.randomPhoneNumbers.sort();
 
-    console.log(sortedNumbers.join("\n"));
     return res.status(200).json({
-      status: "sucess",
-      message: "Phone numbers generated successfully",
+      status: "success",
+      message: "Phone numbers retrieved successfully",
       data: {
         smallestNumber: sortedNumbers[0],
         largestNumber: sortedNumbers[sortedNumbers.length - 1],

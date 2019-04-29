@@ -32,3 +32,9 @@ export const fileExists = (path, res) => {
     return res.status(404).json({ error: { message: "File doesn't exist" } });
   }
 };
+
+export const removeFile = (path) => {
+  fs.unlink(path, (error) => {
+    if (error) throw error;
+  });
+};

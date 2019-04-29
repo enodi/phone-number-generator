@@ -1,6 +1,11 @@
 import chai, { expect } from "chai";
+import path from "path";
 import chaiHttp from "chai-http";
 import app from "../../app";
+
+import { removeFile } from "../../helpers/numbers";
+
+const pathToFile = path.join(__dirname, "../../../numbers.txt");
 
 chai.use(chaiHttp);
 
@@ -70,6 +75,58 @@ describe("Phone Numbers", () => {
           expect(res.status).to.equal(422);
           expect(res.body).to.be.an("object");
           expect(res.body.error).to.have.property("message");
+          done();
+        })
+        .catch(error => {
+          done(error);
+        });
+    });
+  });
+
+  describe("GET /api/v1/phone-number/download", () => {
+    it("should return success message upon successful download", (done) => {
+      chai
+        .request(app)
+        .get("/api/v1/phone-number/download")
+        .then(res => {
+          expect(res.body).to.be.an("object");
+          expect(res.status).to.equal(200);
+          done();
+        })
+        .catch(error => {
+          done(error);
+        });
+    });
+  });
+
+  describe("GET /api/v1/phone-number", () => {
+    it("should return a success message when phone numbers have been retrieved", (done) => {
+      chai
+        .request(app)
+        .get("/api/v1/phone-number")
+        .then(res => {
+          expect(res.body.message)
+            .to.equal("Phone numbers retrieved successfully");
+          expect(res.body.data).to.be.an("object");
+          expect(res.status).to.equal(200);
+          expect(res.body.data).to.have.property("totalPhoneNumbersGenerated");
+          done();
+        })
+        .catch(error => {
+          done(error);
+        });
+    });
+
+    it("should return error if file doesn't exist", (done) => {
+      removeFile(pathToFile);
+      chai
+        .request(app)
+        .get("/api/v1/phone-number")
+        .then(res => {
+          expect(res.status).to.equal(404);
+          expect(res.body.error.message)
+            .to.equal("File doesn't exist");
+          expect(res.body.error).to.be.an("object");
           done();
         })
         .catch(error => {
