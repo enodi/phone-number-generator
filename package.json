@@ -11,7 +11,8 @@
     "lint": "eslint ./",
     "test": "NODE_ENV=test mocha --require @babel/register server/tests/**/*.spec.js --exit",
     "coverage": "nyc --reporter=lcov --reporter=text-lcov npm test",
-    "coveralls": "cat ./coverage/lcov.info | node node_modules/.bin/coveralls"
+    "coveralls": "cat ./coverage/lcov.info | node node_modules/.bin/coveralls",
+    "heroku-postbuild": "npm run prod:build"
   },
   "husky": {
     "hooks": {
