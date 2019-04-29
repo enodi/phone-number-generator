@@ -1,0 +1,40 @@
+.content-container {
+  margin: 0 auto;
+  max-width: 60rem;
+  padding: 0 1.6rem
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 10rem;
+}
+
+.generate-number__input, .generate-number__button {
+  padding: 1rem;
+  font-size: 1.5rem;
+  margin: 1rem 0;
+  border-radius: 3px;
+  outline: none;
+}
+
+.generate-number__input {
+  border: 1px solid #cacccd;
+  width: 100%;
+}
+
+.generate-number__button {
+  background: #A131BB;
+  border: 1px solid #A131BB;
+  color: #fff;
+  cursor: pointer;
+}
+
+.input-wrapper {
+  span {
+    color: #666;
+    font-size: 0.7rem;
+    font-weight: 600;
+  }
+}
