@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css?family=Nanum+Gothic');
+@import url('https://fonts.googleapis.com/css?family=Lobster');
+
+.number-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5em;
+
+  .content {
+    padding: 2em 5em;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12)
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    padding: 1.5em 0;
+    font-family: 'Nanum Gothic', sans-serif;
+
+    span {
+      font-size: 1.3rem;
+      color: #212121;
+      font-family: 'Lobster', cursive;
+      padding-left: 1em;
+    }
+  }
+}
+
+.content__button {
+  display: flex;
+}
+
+.return__button, .download__button {
+  padding: 0.7rem;
+  font-size: 1.2rem;
+  margin: 1.5rem;
+  border-radius: 3px;
+  outline: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+.return__button {
+  background: #A131BB;
+  border: 1px solid #A131BB;
+}
+
+.download__button {
+  background: cornflowerblue;
+  border: 1px solid cornflowerblue;
+}
