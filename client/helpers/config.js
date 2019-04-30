@@ -2,10 +2,10 @@ import axios from "axios";
 
 const path = process.env.NODE_ENV === "production" ? 
   "https://tel-phone-number-generator.herokuapp.com": 
-  "http://localhost";
-const port = process.env.NODE_ENV === "production" ? process.env.PORT : "3000";
+  "http://localhost:3201";
+
 const generatePhoneNumbers = (totalNumbersToBeGenerated, sortBy) => {
-  return axios.post(`${path}:${port}/api/v1/phone-number?order=${sortBy}`, {
+  return axios.post(`${path}/api/v1/phone-number?order=${sortBy}`, {
     totalNumbersToBeGenerated
   });
 };

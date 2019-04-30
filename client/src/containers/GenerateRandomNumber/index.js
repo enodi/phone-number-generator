@@ -34,7 +34,7 @@ const GenerateRandomNumber = () => {
       Swal.fire(":(", `Number cannot be greater than ${MAX_NUMBER}`, "error");
     } else {
       const response = await generatePhoneNumbers(specifiedNumber, sortBy);
-      console.log(response, "ddjcsdck");
+      console.log(response);
       // handle your response
     }
   };
