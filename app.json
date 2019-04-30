@@ -1,0 +1,30 @@
+{
+  "addons": [
+
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ],
+  "env": {
+    "MAX_NUMBER": {
+      "required": true
+    },
+    "MIN_NUMBER": {
+      "required": true
+    },
+    "SERVER_PORT": {
+      "required": true
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1
+    }
+  },
+  "name": "phone-number-generator",
+  "scripts": {
+  },
+  "stack": "heroku-18"
+}
