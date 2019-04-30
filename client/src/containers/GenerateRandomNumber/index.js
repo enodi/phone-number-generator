@@ -5,7 +5,7 @@ import InputField from "../../components/InputField";
 import Button from "../../components/Button";
 import Header from "../../components/Header";
 import SubHeader from "../../components/SubHeader";
-import generatePhoneNumbers from "../../../helpers/config";
+import { generatePhoneNumbers } from "../../../helpers/config";
 import "./style.scss";
 
 const GenerateRandomNumber = () => {
@@ -33,16 +33,15 @@ const GenerateRandomNumber = () => {
     } else if (specifiedNumber > MAX_NUMBER) {
       Swal.fire(":(", `Number cannot be greater than ${MAX_NUMBER}`, "error");
     } else {
-      const response = await generatePhoneNumbers(specifiedNumber, sortBy);
-      console.log(response);
-      // handle your response
+      generatePhoneNumbers(specifiedNumber, sortBy);
+      window.location.href = "/details";
     }
   };
 
   return (
     <Fragment>
       <Header />
-      <SubHeader />
+      <SubHeader title="Enter a number to generate your random phone numbers"/>
       <div className="content-container">
         <form onSubmit={handleOnSubmit}>
           <InputField
