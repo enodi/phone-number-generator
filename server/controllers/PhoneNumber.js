@@ -4,7 +4,7 @@ import fs from "fs";
 import { IsNotANumber, IsGreaterThanMaximumNumber, IsLessThanMinimumNumber } from "../helpers/validators";
 import { generateNumbers, writeNumbersToFile, fileExists } from "../helpers/numbers";
 
-const pathToFile = path.join(__dirname, "../../numbers.txt");
+const pathToFile = path.join(__dirname, "../../client/public/numbers.txt");
 
 export const generatePhoneNumbers = (req, res) => {
   const { totalNumbersToBeGenerated } = req.body;

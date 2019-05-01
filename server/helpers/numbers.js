@@ -13,7 +13,7 @@ export const generateNumbers = (total, order) => {
   return { randomPhoneNumbers: sortedNumbers };
 };
 
-const writeToFile = (path, data) => {
+export const writeToFile = (path, data) => {
   fs.writeFile(path, JSON.stringify(data, null, 2), (err) => {
     if (err) throw err;
   });

@@ -5,7 +5,7 @@ import app from "../../app";
 
 import { removeFile } from "../../helpers/numbers";
 
-const pathToFile = path.join(__dirname, "../../../numbers.txt");
+const pathToFile = path.join(__dirname, "../../../client/public/numbers.txt");
 
 chai.use(chaiHttp);
 
@@ -111,6 +111,9 @@ describe("Phone Numbers", () => {
             .to.equal("File doesn't exist");
           expect(res.body.error).to.be.an("object");
           done();
+        })
+        .catch(error => {
+          done(error);
         });
     });
   });

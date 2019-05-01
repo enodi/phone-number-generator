@@ -2,23 +2,16 @@ import "dotenv/config";
 import express from "express";
 import bodyParser from "body-parser";
 import path from "path";
+import cors from "cors";
 import routes from "./routes";
 
 const app = express();
 
-app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  if (req.method === "OPTIONS") {
-    res.header("Access-Control-Allow-Methods", "PUT,POST,DELETE");
-    return res.status(200).json({});
-  }
-  next();
-});
-
+app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+app.use("/api/v1/phone-number", routes);
 //Static file declaration
 app.use(express.static(path.join(__dirname, "../client/public/dist")));
 
@@ -31,7 +24,6 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
-app.use("/api/v1/phone-number", routes);
 
 app.listen(process.env.PORT, () => {
   console.log(`App runnning on port ${process.env.PORT}`);

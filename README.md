@@ -1,5 +1,5 @@
 # Phone Number generator
-[![CircleCI](https://circleci.com/gh/enodi/phone-number-generator.svg?style=svg)](https://circleci.com/gh/enodi/phone-number-generator)
+[![CircleCI](https://circleci.com/gh/enodi/phone-number-generator.svg?style=svg)](https://circleci.com/gh/enodi/phone-number-generator) [![Coverage Status](https://coveralls.io/repos/github/enodi/phone-number-generator/badge.svg?branch=develop)](https://coveralls.io/github/enodi/phone-number-generator?branch=develop)
 
 ## Introduction
 Phone number generator is a Javascript application that generates random phone numbers for a company. It allows a user
