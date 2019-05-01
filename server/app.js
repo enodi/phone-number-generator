@@ -33,21 +33,6 @@ if (process.env.NODE_ENV === "production") {
 
 app.use("/api/v1/phone-number", routes);
 
-// Catch 404 and forward to error handler
-app.use((req, res, next) => {
-  let err = new Error("Not Found");
-  err.status = 404;
-  next(err);
-});
-
-//Error Handler
-app.use((err, req, res, next) => {
-  res.status(err.status || 500);
-  res.json({
-    error: { message: err.message }
-  });
-});
-
 app.listen(process.env.PORT, () => {
   console.log(`App runnning on port ${process.env.PORT}`);
 });

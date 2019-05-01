@@ -73,7 +73,7 @@ export const getPhoneNumbers = (req, res) => {
 export const downloadFile = (req, res) => {
   fileExists(pathToFile, res);
 
-  res.download(pathToFile, "phone-numbers.txt", (err) => {
+  res.download(pathToFile, (err) => {
     if (err) {
       return res.status(500).json({ error: { message: "Download failed. Please try again" } });
     }

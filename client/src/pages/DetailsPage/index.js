@@ -17,8 +17,19 @@ const DetailsPage = () => {
 
   const handleDownload = async () => {
     const response = await downloadPhoneNumbers();
-    console.log(response);
+    const numbers = (response.data.randomPhoneNumbers).join("\n");
+    const url = window.URL.createObjectURL(new Blob([numbers]));
+    const link = document.createElement("a");
+    link.href = url;
+    link.setAttribute("download", "phone-numbers.txt");
+    document.body.appendChild(link);
+    link.click();
   };
+
+  const redirectToHomePage = () => {
+    window.location.href = "/";
+  };
+
   return (
     <Fragment>
       <Header />
@@ -41,6 +52,8 @@ const DetailsPage = () => {
             id="btn"
             className="return__button"
             text="Return to Home Page"
+            type="button"
+            onClick={redirectToHomePage}
           />
         </div>
       </div>

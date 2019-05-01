@@ -22,9 +22,6 @@ describe("Phone Numbers", () => {
           expect(res.status).to.equal(201);
           expect(res.body.data.randomPhoneNumbers).to.be.an("array");
           done();
-        })
-        .catch(error => {
-          done(error);
         });
     });
 
@@ -40,9 +37,6 @@ describe("Phone Numbers", () => {
           expect(res.body).to.be.an("object");
           expect(res.body).to.have.property("error");
           done();
-        })
-        .catch(error => {
-          done(error);
         });
     });
 
@@ -58,9 +52,6 @@ describe("Phone Numbers", () => {
           expect(res.body).to.be.an("object");
           expect(res.body.error).to.have.property("message");
           done();
-        })
-        .catch(error => {
-          done(error);
         });
     });
 
@@ -76,9 +67,6 @@ describe("Phone Numbers", () => {
           expect(res.body).to.be.an("object");
           expect(res.body.error).to.have.property("message");
           done();
-        })
-        .catch(error => {
-          done(error);
         });
     });
   });
@@ -92,9 +80,6 @@ describe("Phone Numbers", () => {
           expect(res.body).to.be.an("object");
           expect(res.status).to.equal(200);
           done();
-        })
-        .catch(error => {
-          done(error);
         });
     });
   });
@@ -112,9 +97,6 @@ describe("Phone Numbers", () => {
           expect(res.status).to.equal(200);
           expect(res.body.data).to.have.property("totalPhoneNumbersGenerated");
           done();
-        })
-        .catch(error => {
-          done(error);
         });
     });
 
@@ -129,9 +111,6 @@ describe("Phone Numbers", () => {
             .to.equal("File doesn't exist");
           expect(res.body.error).to.be.an("object");
           done();
-        })
-        .catch(error => {
-          done(error);
         });
     });
   });
